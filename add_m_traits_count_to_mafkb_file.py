@@ -23,7 +23,7 @@ with open('old_no_m_traits_af_single_file_glengthwithflanks.tsv', 'r') as f:
         ensg_id = line.strip().split('\t', 1)[0]
         count_info = ensg_count_dict.get(ensg_id)
         if count_info is None:
-            outfile.write(line)
+            outfile.write(line.strip() + '\t0\n')
         else:
             outfile.write(line.strip() + '\t' + count_info + '\n')
 print('job done!')
